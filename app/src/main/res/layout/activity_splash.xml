@@ -4,49 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/spalsh_screen"
-    tools:context=".SplashActivity">
+    android:background="@drawable/scenery"
+    tools:context=".SplashActivity"
+    >
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="211dp"
-        android:layout_height="140dp"
-        android:src="@drawable/white_cloud"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="291dp"
+        android:layout_height="172dp"
+        android:fontFamily="@font/merriweathersans_bold"
+        android:text="WEATHER \n NOW"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/black"
+        android:textColorLink="@color/black"
+        android:textSize="55sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.241" />
+        app:layout_constraintVertical_bias="0.416" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="273dp"
-        android:layout_height="156dp"
-        android:layout_marginTop="67dp"
-        android:fontFamily="@font/merriweathersans_bold"
-        android:text="Discover the world's weather at your fingertips with WEATHER NOW"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.226" />
-
-    <TextView
-        android:layout_width="256dp"
-        android:layout_height="44dp"
+        android:layout_width="246dp"
+        android:layout_height="119dp"
         android:fontFamily="@font/merriweathersans_medium"
         android:text="Get ready for a weather adventure"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.318" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

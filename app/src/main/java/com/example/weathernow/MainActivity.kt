@@ -62,13 +62,13 @@ class MainActivity : AppCompatActivity() {
                      val sunSet=responseBody.sys.sunset.toLong()
                      val seaLevel=responseBody.main.pressure
                      val condition=responseBody.weather.firstOrNull()?.main?:"unknown"
-                     val maxTemp=responseBody.main.temp_max
-                     val minTemp=responseBody.main.temp_min
+//                     val maxTemp=responseBody.main.temp_max
+//                     val minTemp=responseBody.main.temp_min
 
                      binding.temp.text="$temperature  °C"
                      binding.textView6.text=condition
-                     binding.maxTemp.text="Max Temp: $maxTemp °C"
-                     binding.minTemp.text="Min Temp: $minTemp °C"
+//                     binding.maxTemp.text="Max Temp: $maxTemp °C"
+//                     binding.minTemp.text="Min Temp: $minTemp °C"
                      binding.humidity.text="$humidity %"
                      binding.windSpeed.text="$windSpeed m/s"
                      binding.sunRise.text="${time(sunRise)}"
@@ -95,18 +95,27 @@ class MainActivity : AppCompatActivity() {
 
     private fun changeImageAccordingToWeatherCondition(conditions : String) {
         when(conditions){
-            "Clear Sky","Sunny","Clear"->{
+            "Clear Sky","Clear"->{
+                binding.root.setBackgroundResource(R.drawable.clear_sky)
+
+
+            }
+            "Sunny"->{
                 binding.root.setBackgroundResource(R.drawable.sunny_background)
                 binding.lottieAnimationView.setAnimation(R.raw.sun)
 
             }
-            "Partly Clouds","Clouds","Overcast","Mist","Foggy"->{
-                binding.root.setBackgroundResource(R.drawable.colud_background)
+            "Partly Clouds","Clouds"->{
+                binding.root.setBackgroundResource(R.drawable.cloud2)
                 binding.lottieAnimationView.setAnimation(R.raw.cloud)
 
             }
-            "Heavy Rain","Light Rain","Drizzle","Moderate Rain","showers"->{
-                binding.root.setBackgroundResource(R.drawable.rain_background)
+            "Overcast","Mist","Foggy","Haze"-> {
+                binding.root.setBackgroundResource(R.drawable.colud_background)
+                binding.lottieAnimationView.setAnimation(R.raw.cloud)
+            }
+            "Heavy Rain","Light Rain","Drizzle","Moderate Rain","showers","Rain"->{
+                binding.root.setBackgroundResource(R.drawable.green_rain)
                 binding.lottieAnimationView.setAnimation(R.raw.rain)
 
             }
